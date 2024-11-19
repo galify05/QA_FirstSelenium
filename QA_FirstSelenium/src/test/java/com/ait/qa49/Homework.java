@@ -21,7 +21,7 @@ public class Homework {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demowebshop.tricentis.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
@@ -83,8 +83,8 @@ public class Homework {
         //10
         System.out.println(driver.findElement(By.cssSelector("[href^=\"/shipping\"]")).getText());
 //      driver.findElement(By.cssSelector("[href*='shipping']"));
-
     }
+
 
 
     @AfterMethod

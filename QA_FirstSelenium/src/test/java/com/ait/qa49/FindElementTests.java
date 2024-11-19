@@ -73,6 +73,44 @@ public class FindElementTests {
         driver.findElement(By.cssSelector("[href^='/log']"));
         //end on-> $
         driver.findElement(By.cssSelector("[href$='search']"));
+
+//tag+id
+        driver.findElement(By.cssSelector("input#city"));
+        // tag + class
+        driver.findElement(By.cssSelector("div.search-card"));
+
+        //tag+id+[attr='value']
+        driver.findElement(By.cssSelector("input#city[type='text']"));
+    }
+
+    // //*[@attr='value']
+    @Test
+    public void findElementByXpath() {
+        //tag > //tag
+        driver.findElement(By.xpath("//h1"));
+
+        //id > xpath - //*[@id='value']
+        driver.findElement(By.xpath("//input[@id='city']"));
+
+        // classname "header"
+        driver.findElement(By.xpath("//div[@class='header']"));
+        // contains = //*[contains(.,'Text')]
+        driver.findElement(By.xpath("//h2[contains(.,'Yalla')]"));
+
+        driver.findElement(By.xpath("//h2[text()='Type your data and hit Yalla!']"));
+        driver.findElement(By.xpath("//h2[.='Type your data and hit Yalla!']"));
+    driver.findElement(By.xpath("//label[starts-with(@for,'ci')]"));
+
+        driver.findElement(By.xpath("//a[@class='navigation-link']/..")); // выйти на уровень назад
+        driver.findElement(By.xpath("//h1/parent::*")); // найти элемент родителя (блок div)
+//        driver.findElement(By.xpath("//h1/..")); // найти элемент родителя (блок div) тоже самое что выше
+        driver.findElement(By.xpath("//h1/ancestor::*")); // все элементиы
+        driver.findElement(By.xpath("//h1/ancestor::div")); // тут только 2 варианта
+        driver.findElement(By.xpath("//h1/ancestor::div[2]")); // выбрали 1 вариант из двух
+
+        driver.findElement(By.xpath("//h1/following-sibling::form"));
+        driver.findElement(By.xpath("//h2/preceding-sibling::*"));
+
     }
 }
 
