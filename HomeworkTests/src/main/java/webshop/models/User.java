@@ -1,7 +1,11 @@
-package demoshop;
+package webshop.models;
 
 public class User {
+
     String FirstName;
+    String LastName;
+    String email;
+    String password;
 
     public String getFirstName() {
         return FirstName;
@@ -9,7 +13,7 @@ public class User {
 
     public User setFirstName(String firstName) {
         FirstName = firstName;
-    return this;
+        return this;
     }
 
     public String getLastName() {
@@ -18,7 +22,7 @@ public class User {
 
     public User setLastName(String lastName) {
         LastName = lastName;
-    return this;
+        return this;
     }
 
     public String getEmail() {
@@ -27,7 +31,7 @@ public class User {
 
     public User setEmail(String email) {
         this.email = email;
-    return this;
+        return this;
     }
 
     public String getPassword() {
@@ -36,11 +40,6 @@ public class User {
 
     public User setPassword(String password) {
         this.password = password;
-    return this;
+        return this;
     }
-
-    String LastName;
-    String email;
-    String password;
-
 }
