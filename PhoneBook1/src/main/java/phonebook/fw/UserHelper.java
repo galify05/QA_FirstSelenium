@@ -15,7 +15,7 @@ public class UserHelper extends BaseHelper {
 
     public void fillRegisterLoginForm(User user) {
         type(By.name("email"), user.getEmail());
-        type(By.name("passwor"), user.getPassword());
+        type(By.name("password"), user.getPassword());
     }
 
     public void clickOnLoginLink() {
